@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Friend List & Search</title>
+    <title>Friend List & Requests</title>
     <link rel="stylesheet" href="styles.css"> 
 </head>
 <body>
@@ -14,21 +14,24 @@
             <h1 class="main-title">FRIENDS</h1>
             
             <div class="search-widget">
-                <input type="text" id="friend-search-input" class="search-input" placeholder="Search for a player name...">
-                <button id="search-button" class="search-button">🔍</button>
+                <input type="text" id="friend-list-search-input" class="search-input" placeholder="Search friends by name...">
+                <button id="search-list-button" class="search-button">🔍</button>
             </div>
         </header>
 
-        <main class="friend-lists-main">
+        <main class="friends-requests-main-layout"> 
             
-            <section class="friend-list online-friends">
-                <h2>Online (5)</h2>
-                <div id="online-list-container" class="list-container">
+            <section class="friend-list-panel">
+                <h2>My Friends (15)</h2>
+                <div id="active-friend-list" class="list-container">
                     
                     <div class="friend-row">
                         <div class="friend-info">
-                            <img src="placeholder-online-avatar.png" alt="Online Avatar" class="friend-avatar">
-                            <span class="friend-name">[Online Player Name]</span> 
+                            <div class="avatar-container">
+                                <img src="placeholder-online-avatar.png" alt="Avatar" class="friend-avatar">
+                                <span class="status-indicator status-online"></span>
+                            </div>
+                            <span class="friend-name">Mugheadd</span> 
                         </div>
                         <span class="friend-status status-online">In Game</span>
                         <button class="message-button">✉️</button>
@@ -36,24 +39,11 @@
 
                     <div class="friend-row">
                         <div class="friend-info">
-                            <img src="placeholder-online-avatar.png" alt="Online Avatar" class="friend-avatar">
-                            <span class="friend-name">Mugheadd</span> 
-                        </div>
-                        <span class="friend-status status-online">In Lobby</span>
-                        <button class="message-button">✉️</button>
-                    </div>
-
-                </div>
-            </section>
-
-            <section class="friend-list offline-friends">
-                <h2>Offline (12)</h2>
-                <div id="offline-list-container" class="list-container">
-                    
-                    <div class="friend-row">
-                        <div class="friend-info">
-                            <img src="placeholder-offline-avatar.png" alt="Offline Avatar" class="friend-avatar">
-                            <span class="friend-name">CrimsonCannon</span> 
+                            <div class="avatar-container">
+                                <img src="placeholder-offline-avatar.png" alt="Avatar" class="friend-avatar">
+                                <span class="status-indicator status-offline"></span>
+                            </div>
+                            <span class="friend-name">SilentSniper</span> 
                         </div>
                         <span class="friend-status status-offline">Offline</span>
                         <button class="message-button">✉️</button>
@@ -61,11 +51,33 @@
 
                 </div>
             </section>
-            
+
+            <section class="requests-panel">
+                <h2>Friend Requests (3)</h2>
+                <div id="requests-list-container" class="list-container requests-list">
+                    
+                    <div class="request-row">
+                        <span class="request-name">AlphaStrike</span>
+                        <div class="request-actions">
+                            <button class="action-button accept-btn">Accept</button>
+                            <button class="action-button decline-btn">Decline</button>
+                        </div>
+                    </div>
+
+                    <div class="request-row">
+                        <span class="request-name">TankerTom</span>
+                        <div class="request-actions">
+                            <button class="action-button accept-btn">Accept</button>
+                            <button class="action-button decline-btn">Decline</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
         </main>
         
         <footer class="bottom-back-nav">
-            <a href="index.html" class="back-link" id="back-button">
+            <a href="index.html" class="back-link" id="back-to-menu-btn">
                 &leftarrow; BACK
             </a>
         </footer>
@@ -74,4 +86,3 @@
 
 </body>
 </html>
-<script src="script.js" defer></script>

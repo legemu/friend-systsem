@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Options</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+
+    <div class="app-container">
+        
+        <header class="options-header">
+            <h1 class="main-title">OPTIONS</h1>
+        </header>
+
+        <main class="options-settings-main">
+            
+            <section class="settings-group graphics-settings">
+                <h2>Graphics Settings</h2>
+                
+                <div class="setting-item">
+                    <label for="resolution-select" class="setting-label">Resolution:</label>
+                    <select id="resolution-select" class="setting-control">
+                        <option value="1920x1080">1920 x 1080 (Recommended)</option>
+                        <option value="1280x720">1280 x 720</option>
+                    </select>
+                </div>
+
+                <div class="setting-item">
+                    <label for="texture-quality" class="setting-label">Texture Quality:</label>
+                    <input type="range" id="texture-quality" min="1" max="3" value="3" step="1" class="setting-control slider">
+                    <span class="slider-value">High</span>
+                </div>
+
+                <div class="setting-item">
+                    <label for="v-sync" class="setting-label">V-Sync:</label>
+                    <input type="checkbox" id="v-sync" class="setting-control checkbox" checked>
+                </div>
+            </section>
+
+            <section class="settings-group audio-settings">
+                <h2>Audio Settings</h2>
+                
+                <div class="setting-item">
+                    <label for="master-volume" class="setting-label">Master Volume:</label>
+                    <input type="range" id="master-volume" min="0" max="100" value="75" step="1" class="setting-control slider">
+                    <span class="slider-value volume-value">75%</span>
+                </div>
+
+                <div class="setting-item">
+                    <label for="music-volume" class="setting-label">Music Volume:</label>
+                    <input type="range" id="music-volume" min="0" max="100" value="50" step="1" class="setting-control slider">
+                    <span class="slider-value volume-value">50%</span>
+                </div>
+            </section>
+
+            <section class="settings-group controls-settings">
+                <h2>Controls</h2>
+                
+                <div class="setting-item">
+                    <label for="move-forward" class="setting-label">Move Forward:</label>
+                    <span class="setting-control keybind-display">W</span>
+                </div>
+                
+                <div class="setting-item">
+                    <label for="fire-weapon" class="setting-label">Fire Weapon:</label>
+                    <span class="setting-control keybind-display">Left Click</span>
+                </div>
+            </section>
+
+            <div class="options-actions">
+                <button class="action-button save-btn" id="save-options-btn">SAVE CHANGES</button>
+                <button class="action-button reset-btn" id="reset-options-btn">RESET TO DEFAULT</button>
+            </div>
+
+        </main>
+        
+        <footer class="bottom-back-nav">
+            <a href="index.html" class="back-link" id="back-to-menu-btn">
+                &leftarrow; BACK
+            </a>
+        </footer>
+
+    </div>
+
+</body>
+</html>

@@ -448,3 +448,269 @@ body {
 .action-button:hover {
     background-color: #ffd100;
 }
+
+/* -------------------- OPTIONS PAGE LAYOUT -------------------- */
+
+.options-header {
+    /* Centering the title */
+    display: flex;
+    justify-content: center;
+    padding: 30px 0;
+    border-bottom: 2px solid var(--color-divider);
+    margin-bottom: 30px;
+}
+
+.options-settings-main {
+    /* Uses a column layout with gaps for clean spacing */
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Space between the Graphics, Audio, and Controls sections */
+    padding: 0 10%; /* Center the content by adding horizontal padding */
+}
+
+/* Settings Group Section (Graphics, Audio, Controls) */
+.settings-group {
+    background-color: #2a2a2a; /* Slightly lighter background for the group box */
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.settings-group h2 {
+    color: var(--color-accent-gold);
+    font-size: 1.5em;
+    border-bottom: 1px solid var(--color-divider);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Individual Setting Row */
+.setting-item {
+    display: flex;
+    justify-content: space-between; /* Pushes label to left, control to right */
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px dashed #3a3a3a; /* Subtle divider for each item */
+}
+
+.setting-item:last-child {
+    border-bottom: none; /* Remove divider for the last item in a group */
+}
+
+.setting-label {
+    color: var(--color-primary-text);
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+/* -------------------- SETTING CONTROLS (Input Styles) -------------------- */
+
+.setting-control {
+    font-size: 1em;
+    padding: 5px 8px;
+    border-radius: 4px;
+    background-color: #333333;
+    color: var(--color-primary-text);
+    border: 1px solid #444444;
+}
+
+/* Select Menu */
+select.setting-control {
+    width: 200px;
+}
+
+/* Checkbox Styling (Basic) */
+input[type="checkbox"].checkbox {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--color-accent-gold); /* Colors the box/check mark */
+}
+
+/* Keybind Display (Read-only text) */
+.keybind-display {
+    padding: 5px 15px;
+    border: 1px solid var(--color-accent-gold);
+    background-color: #000000;
+    cursor: default;
+}
+
+/* Slider (Range Input) Styling */
+.slider {
+    width: 150px;
+    height: 8px;
+    -webkit-appearance: none; /* Removes default styling */
+    background: #555555;
+    border-radius: 4px;
+    margin: 0 15px;
+    cursor: pointer;
+}
+
+/* Slider Track/Bar Styling (Webkit/Firefox) */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--color-accent-gold);
+    cursor: pointer;
+    border: 3px solid #000000;
+}
+
+.slider-value {
+    color: var(--color-accent-gold);
+    font-weight: bold;
+    width: 50px; /* Ensures consistent alignment */
+    text-align: right;
+}
+
+/* -------------------- ACTION BUTTONS -------------------- */
+
+.options-actions {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+
+.options-actions .action-button {
+    /* Reuses the standard gold button style */
+    padding: 12px 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: transform 0.1s;
+}
+
+.options-actions .save-btn {
+    background-color: var(--color-accent-gold);
+    color: var(--color-dark-bg);
+}
+
+.options-actions .reset-btn {
+    background-color: #555555;
+    color: var(--color-primary-text);
+}
+
+.options-actions .action-button:active {
+    transform: translateY(1px); /* Simple press effect */
+}
+
+/* -------------------- TWO-COLUMN LAYOUT: Friends & Requests -------------------- */
+
+.friends-requests-main-layout {
+    /* Uses Flexbox to arrange the two main sections side-by-side */
+    display: flex;
+    gap: 30px;
+    flex-grow: 1; /* Allows the content to fill the screen */
+    padding: 20px 0 50px;
+}
+
+/* Left Panel (Friend List) */
+.friend-list-panel {
+    width: 65%; /* Allocate more space to the main friend list */
+    min-width: 400px;
+}
+
+/* Right Panel (Requests) */
+.requests-panel {
+    width: 35%; /* Dedicated space for requests */
+    min-width: 250px;
+    border-left: 1px solid var(--color-divider);
+    padding-left: 30px;
+}
+
+/* Reusable List Heading */
+.friend-list-panel h2, .requests-panel h2 {
+    color: var(--color-secondary-gray);
+    font-size: 1.2em;
+    border-bottom: 1px solid var(--color-divider);
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+/* -------------------- AVATAR & STATUS CIRCLE (The complex part) -------------------- */
+
+/* 1. Parent Container (Needed for relative positioning) */
+.avatar-container {
+    position: relative; 
+    width: 40px; 
+    height: 40px;
+}
+
+/* 2. Avatar Image (Reuses existing .friend-avatar styling) */
+/* .friend-avatar is already styled to be 40x40px and round */
+
+/* 3. Status Circle (The absolute overlay) */
+.status-indicator {
+    position: absolute; /* Positioned relative to the parent .avatar-container */
+    bottom: 0;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid var(--color-dark-bg); /* Dark border for high visibility against the avatar */
+}
+
+/* Status Colors (Reuses existing .status-online/.status-offline color definitions) */
+.status-indicator.status-online {
+    background-color: #00ff00; /* Bright Green */
+}
+
+.status-indicator.status-offline {
+    background-color: var(--color-secondary-gray); /* Gray/Silver */
+}
+
+/* -------------------- FRIEND REQUESTS STYLING -------------------- */
+
+.requests-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.request-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2a2a2a;
+    padding: 10px 15px;
+    border-radius: 4px;
+}
+
+.request-name {
+    font-weight: bold;
+    font-size: 1.1em;
+    flex-grow: 1; /* Push buttons to the right */
+}
+
+.request-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.request-actions .action-button {
+    padding: 5px 10px;
+    font-size: 0.9em;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.request-actions .action-button:hover {
+    opacity: 0.8;
+}
+
+.accept-btn {
+    background-color: #008000; /* Green Accept */
+    color: var(--color-primary-text);
+    border: none;
+}
+
+.decline-btn {
+    background-color: #ff4500; /* Orange/Red Decline */
+    color: var(--color-primary-text);
+    border: none;
+}
