@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recently Played With</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+
+    <div class="app-container">
+        
+        <header class="recents-header">
+            <h1 class="main-title">RECENTS</h1>
+            
+            <div class="recents-filter-widget">
+                <span class="filter-label">Filters:</span>
+                <button class="filter-button" id="toggle-filter-btn">None</button>
+            </div>
+        </header>
+
+        <main class="recents-list-main">
+            
+            <div class="list-header-row">
+                <span class="header-col player-col">Players</span>
+                <span class="header-col game-col">Game</span>
+                <span class="header-col last-col">Last Played</span>
+                <span class="header-col add-col">Add</span> 
+            </div>
+
+            <div id="recents-list-container" class="player-list-container">
+                
+                <div class="player-row recents-row-template">
+                    <div class="player-info">
+                        <img src="placeholder-tank-avatar.png" alt="Player Avatar" class="player-avatar">
+                        <span class="player-name">[Player Name]</span> 
+                    </div>
+
+                    <span class="player-game">[Game Type]</span>
+
+                    <span class="player-time">[Time Ago]</span>
+
+                    <button class="add-button" id="add-friend-btn">
+                        <span class="plus-icon">+</span>
+                    </button>
+                </div>
+                
+                <div class="player-row">
+                    <div class="player-info">
+                        <img src="placeholder-tank-avatar.png" alt="Player Avatar" class="player-avatar">
+                        <span class="player-name">mugheadd</span>
+                    </div>
+                    <span class="player-game">TDM</span>
+                    <span class="player-time">&lt;0 min ago</span>
+                    <button class="add-button">+</button>
+                </div>
+                <div class="player-row">
+                    <div class="player-info">
+                        <img src="placeholder-tank-avatar.png" alt="Player Avatar" class="player-avatar">
+                        <span class="player-name">CrimsonCannon</span>
+                    </div>
+                    <span class="player-game">CTF</span>
+                    <span class="player-time">1 hr ago</span>
+                    <button class="add-button">+</button>
+                </div>
+
+            </div>
+            
+        </main>
+
+        <footer class="bottom-back-nav">
+            <a href="index.html" class="back-link" id="back-to-menu-btn">
+                &leftarrow; BACK
+                <span class="friends-label">FRIENDS</span>
+            </a>
+        </footer>
+
+    </div>
+
+</body>
+</html>
+
+<script src="script.js" defer></script>

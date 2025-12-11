@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friends Menu</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+
+    <div class="app-container">
+        
+        <main class="friends-main-layout">
+            
+            <section class="left-menu-panel">
+                
+                <h1 class="main-title">FRIENDS</h1>
+                
+                <nav class="primary-nav-links">
+                    <a href="friend-list.html" class="nav-link" id="link-friend-list">Friend List</a>
+                    <a href="recents.html" class="nav-link" id="link-recents">Recent Plays</a>
+                    <a href="player-search.html" class="nav-link" id="link-search">Friend Search</a>
+                    <a href="options.html" class="nav-link" id="link-options">Options</a>
+                </nav>
+
+            </section>
+
+            <section class="right-status-panel">
+                
+                <div class="current-user-status">
+                    <p class="status-indicator">In Lobby</p>
+                    <div class="user-profile-widget">
+                        <img src="placeholder-avatar.png" alt="User Avatar" class="profile-avatar">
+                        <span class="username">Username123</span>
+                        <span class="user-activity">Playing 1 hr</span>
+                    </div>
+                </div>
+
+                <div class="friend-status-list online-status">
+                    <h2>Online</h2>
+                    <p class="placeholder-text">User1, User2...</p>
+                </div>
+
+                <div class="friend-status-list offline-status">
+                    <h2>Offline</h2>
+                    <p class="placeholder-text">User3, User4...</p>
+                </div>
+
+            </section>
+        </main>
+        
+        <footer class="bottom-back-nav">
+            <a href="#" class="back-link" id="back-button">
+                &leftarrow; BACK
+            </a>
+        </footer>
+
+    </div>
+
+</body>
+</html>
+<script src="script.js" defer></script>

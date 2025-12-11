@@ -1,0 +1,450 @@
+/* GLOBAL RESETS AND FONT */
+:root {
+    /* Color Palette */
+    --color-dark-bg: #1e1e1e; /* Dark background */
+    --color-primary-text: #ffffff; /* White text for contrast */
+    --color-accent-gold: #FFD700; /* Gold for titles and accents */
+    --color-secondary-gray: #aaaaaa; /* Lighter text for labels */
+    --color-divider: #333333; /* Darker line for separation */
+    
+    /* Font Placeholder (Use a strong, modern font from Google Fonts like 'Roboto Condensed' or 'Inter') */
+    --font-primary: 'Arial Black', sans-serif;
+    --font-secondary: 'Arial', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-dark-bg);
+    color: var(--color-primary-text);
+    font-family: var(--font-secondary);
+    /* Set a height for demonstration, as this is a full-screen app design */
+    min-height: 100vh;
+    display: flex; /* Helps center the app-container if needed */
+    justify-content: center;
+}
+
+/* APP CONTAINER - Simulates the bounds of your desktop/app frame */
+.app-container {
+    width: 100%;
+    max-width: 1440px; /* Assuming a common desktop resolution */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* -------------------- MAIN LAYOUT (Flexbox for Two Columns) -------------------- */
+.friends-main-layout {
+    flex-grow: 1; /* Allows the content to fill the remaining space */
+    display: flex;
+    gap: 50px; /* Space between the left and right panels */
+    padding-bottom: 50px; /* Space above the footer */
+}
+
+/* LEFT COLUMN: NAVIGATION */
+.left-menu-panel {
+    width: 40%; /* Takes up 40% of the main space */
+    padding-top: 50px;
+}
+
+.main-title {
+    font-size: 5em; /* Large size for FRIENDS */
+    color: var(--color-accent-gold);
+    font-family: var(--font-primary);
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+.primary-nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Space between menu links */
+}
+
+.nav-link {
+    color: var(--color-primary-text);
+    font-size: 1.8em;
+    font-family: var(--font-primary);
+    text-decoration: none;
+    transition: color 0.2s;
+    width: fit-content; /* Only takes up space needed by text */
+}
+
+.nav-link:hover {
+    color: var(--color-accent-gold);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* -------------------- RIGHT COLUMN: STATUS PANEL -------------------- */
+.right-status-panel {
+    width: 60%; /* Takes up 60% of the main space */
+    padding-top: 50px;
+    border-left: 1px solid var(--color-divider); /* Visual separator */
+    padding-left: 50px;
+}
+
+/* Current User Status Widget */
+.current-user-status {
+    background-color: #2a2a2a;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+.status-indicator {
+    color: var(--color-secondary-gray);
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.user-profile-widget {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.profile-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Makes the image circular */
+    border: 2px solid var(--color-accent-gold);
+}
+
+.username {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.user-activity {
+    color: #00ff00; /* Placeholder for 'Playing' indicator */
+    font-size: 0.9em;
+    margin-left: auto; /* Pushes the activity to the far right */
+}
+
+/* Friend Status Lists (Online/Offline) */
+.friend-status-list h2 {
+    color: var(--color-secondary-gray);
+    font-size: 1.1em;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--color-secondary-gray);
+}
+
+/* -------------------- BOTTOM NAVIGATION (FOOTER) -------------------- */
+.bottom-back-nav {
+    border-top: 1px solid var(--color-divider);
+    padding: 15px 0;
+    text-align: left;
+}
+
+.back-link {
+    color: var(--color-secondary-gray);
+    text-decoration: none;
+    font-size: 1em;
+    padding: 5px 10px;
+    transition: color 0.2s;
+}
+
+.back-link:hover {
+    color: var(--color-primary-text);
+}
+
+/* -------------------- FRIEND LIST HEADER (Title and Search) -------------------- */
+
+.friend-list-header {
+    /* Uses Flexbox to put the H1 and the Search Widget side-by-side */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+    border-bottom: 2px solid var(--color-divider);
+    margin-bottom: 20px;
+}
+
+/* Ensure the main title is the large gold text */
+.friend-list-header .main-title {
+    /* Reuses the style from the main menu */
+    font-size: 3.5em; 
+    margin: 0;
+}
+
+/* Search Widget Styling */
+.search-widget {
+    display: flex;
+    align-items: center;
+    background-color: #333333; /* Darker background for the input area */
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 5px;
+}
+
+.search-input {
+    background: none;
+    border: none;
+    color: var(--color-primary-text);
+    padding: 8px 10px;
+    font-size: 1em;
+    width: 300px; /* Set a fixed width for the search bar */
+    outline: none; /* Removes the blue glow when clicked */
+}
+
+.search-input::placeholder {
+    color: var(--color-secondary-gray);
+}
+
+.search-button {
+    background-color: var(--color-accent-gold);
+    color: var(--color-dark-bg);
+    border: none;
+    padding: 8px 15px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.search-button:hover {
+    background-color: #ffd100; /* Slightly lighter gold on hover */
+}
+
+
+/* -------------------- FRIEND LISTS LAYOUT -------------------- */
+
+.friend-lists-main {
+    /* Uses Flexbox to arrange the Online and Offline sections side-by-side */
+    display: flex;
+    gap: 40px; 
+    flex-wrap: wrap; /* Allows sections to wrap if the screen is too small */
+    flex-grow: 1;
+}
+
+.friend-list {
+    /* Each list section (Online/Offline) takes half the available width */
+    width: calc(50% - 20px); 
+    min-width: 300px; /* Ensures it doesn't get too narrow */
+}
+
+.friend-list h2 {
+    color: var(--color-secondary-gray);
+    font-size: 1.2em;
+    border-bottom: 1px solid var(--color-divider);
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+.list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Space between each player row */
+}
+
+
+/* -------------------- PLAYER ROW TEMPLATE STYLING -------------------- */
+
+.friend-row {
+    /* Makes the row an even Flex container */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2a2a2a;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.friend-row:hover {
+    background-color: #383838; /* Slightly lighter row on hover */
+}
+
+.friend-info {
+    /* Grouping the avatar and name */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 40%; /* Ensures the name doesn't take up too much space */
+}
+
+.friend-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--color-accent-gold); /* Gold border for emphasis */
+}
+
+.friend-name {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.friend-status {
+    font-size: 0.9em;
+    width: 30%; /* Gives status a fixed column width */
+    text-align: right;
+}
+
+.status-online {
+    color: #00ff00; /* Green for online status */
+}
+
+.status-offline {
+    color: var(--color-secondary-gray); /* Gray for offline status */
+}
+
+.message-button {
+    background-color: var(--color-divider);
+    color: var(--color-primary-text);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.message-button:hover {
+    background-color: #555555;
+}
+
+/* -------------------- PLAYER SEARCH HEADER -------------------- */
+
+.player-search-header {
+    /* Centering the search bar below the title */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0 40px;
+    border-bottom: 2px solid var(--color-divider);
+    margin-bottom: 20px;
+}
+
+.player-search-header .main-title {
+    /* Reuses the large, gold title style */
+    font-size: 3.5em; 
+    margin-bottom: 30px;
+}
+
+/* -------------------- LARGE SEARCH WIDGET -------------------- */
+
+.search-widget-large {
+    display: flex;
+    background-color: #333333; /* Darker background for the input area */
+    border-radius: 8px;
+    overflow: hidden;
+    width: 60%; /* Make the search bar wide and prominent */
+    min-width: 400px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.search-input-main {
+    background: none;
+    border: none;
+    color: var(--color-primary-text);
+    padding: 15px 20px;
+    font-size: 1.1em;
+    flex-grow: 1; /* Allows the input to take up all available space */
+    outline: none; 
+}
+
+.search-input-main::placeholder {
+    color: var(--color-secondary-gray);
+}
+
+.search-button-main {
+    background-color: var(--color-accent-gold);
+    color: var(--color-dark-bg);
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.search-button-main:hover {
+    background-color: #ffd100;
+}
+
+/* -------------------- SEARCH RESULTS SECTION -------------------- */
+
+.search-results-main {
+    flex-grow: 1;
+    padding: 0 50px; /* Padding for the container to keep it off the edges */
+}
+
+.results-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Space between result rows */
+    width: 100%;
+}
+
+.initial-message {
+    color: var(--color-secondary-gray);
+    text-align: center;
+    padding: 50px 0;
+    font-style: italic;
+}
+
+
+/* -------------------- RESULT ROW TEMPLATE STYLING -------------------- */
+
+.result-row {
+    /* Makes the row an even Flex container, similar to the friend list */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2a2a2a;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.result-row:hover {
+    background-color: #383838; 
+}
+
+.player-info-result {
+    /* Grouping the avatar and name */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 40%; 
+}
+
+.result-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--color-accent-gold);
+}
+
+.player-name-result {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.player-status-result {
+    font-size: 0.9em;
+    width: 30%;
+    text-align: center;
+}
+
+.action-button {
+    background-color: var(--color-accent-gold);
+    color: var(--color-dark-bg);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.action-button:hover {
+    background-color: #ffd100;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Search</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+
+    <div class="app-container">
+        
+        <header class="player-search-header">
+            <h1 class="main-title">PLAYER SEARCH</h1>
+            
+            <div class="search-widget-large">
+                <input type="text" id="player-search-input" class="search-input-main" placeholder="Enter full or partial player name...">
+                <button id="perform-search-btn" class="search-button-main">SEARCH</button>
+            </div>
+        </header>
+
+        <main class="search-results-main">
+            
+            <div id="search-results-container" class="results-container">
+                
+                <div class="result-row result-template" style="display: none;">
+                    
+                    <div class="player-info-result">
+                        <img src="placeholder-online-avatar.png" alt="Player Avatar" class="result-avatar">
+                        <span class="player-name-result">[Searched Player Name]</span> 
+                    </div>
+                    
+                    <span class="player-status-result status-online">Online</span>
+                    
+                    <button class="action-button send-request-btn">Send Request</button>
+                </div>
+                
+                <p id="initial-search-message" class="initial-message">Start typing to find players across all servers.</p>
+
+                <div class="result-row">
+                    <div class="player-info-result">
+                        <img src="placeholder-online-avatar.png" alt="Player Avatar" class="result-avatar">
+                        <span class="player-name-result">jonantcat</span> 
+                    </div>
+                    <span class="player-status-result status-offline">Offline</span>
+                    <button class="action-button send-request-btn">Request Sent</button>
+                </div>
+
+            </div>
+            
+        </main>
+        
+        <footer class="bottom-back-nav">
+            <a href="index.html" class="back-link" id="back-to-menu-btn">
+                &leftarrow; BACK
+            </a>
+        </footer>
+
+    </div>
+
+</body>
+</html>
+<script src="script.js" defer></script>

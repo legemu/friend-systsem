@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friend List & Search</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+
+    <div class="app-container">
+        
+        <header class="friend-list-header">
+            <h1 class="main-title">FRIENDS</h1>
+            
+            <div class="search-widget">
+                <input type="text" id="friend-search-input" class="search-input" placeholder="Search for a player name...">
+                <button id="search-button" class="search-button">🔍</button>
+            </div>
+        </header>
+
+        <main class="friend-lists-main">
+            
+            <section class="friend-list online-friends">
+                <h2>Online (5)</h2>
+                <div id="online-list-container" class="list-container">
+                    
+                    <div class="friend-row">
+                        <div class="friend-info">
+                            <img src="placeholder-online-avatar.png" alt="Online Avatar" class="friend-avatar">
+                            <span class="friend-name">[Online Player Name]</span> 
+                        </div>
+                        <span class="friend-status status-online">In Game</span>
+                        <button class="message-button">✉️</button>
+                    </div>
+
+                    <div class="friend-row">
+                        <div class="friend-info">
+                            <img src="placeholder-online-avatar.png" alt="Online Avatar" class="friend-avatar">
+                            <span class="friend-name">Mugheadd</span> 
+                        </div>
+                        <span class="friend-status status-online">In Lobby</span>
+                        <button class="message-button">✉️</button>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="friend-list offline-friends">
+                <h2>Offline (12)</h2>
+                <div id="offline-list-container" class="list-container">
+                    
+                    <div class="friend-row">
+                        <div class="friend-info">
+                            <img src="placeholder-offline-avatar.png" alt="Offline Avatar" class="friend-avatar">
+                            <span class="friend-name">CrimsonCannon</span> 
+                        </div>
+                        <span class="friend-status status-offline">Offline</span>
+                        <button class="message-button">✉️</button>
+                    </div>
+
+                </div>
+            </section>
+            
+        </main>
+        
+        <footer class="bottom-back-nav">
+            <a href="index.html" class="back-link" id="back-button">
+                &leftarrow; BACK
+            </a>
+        </footer>
+
+    </div>
+
+</body>
+</html>
+<script src="script.js" defer></script>
